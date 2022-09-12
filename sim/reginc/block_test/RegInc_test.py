@@ -24,10 +24,10 @@ class TestHarness( Component ):
 
     s.src    = stream.SourceRTL( Bits32 )
     s.sink   = stream.SinkRTL  ( Bits32 )
-    s.RegInc = RegInc
+    s.reginc = RegInc
 
-    s.RegInc.recv //= s.src.send
-    s.sink.recv   //= s.RegInc.send
+    s.reginc.recv //= s.src.send
+    s.sink.recv   //= s.reginc.send
 
   def done( s ):
     return s.src.done() and s.sink.done()
@@ -64,4 +64,4 @@ def test( test_params, cmdline_opts ):
     initial_delay=test_params.sink + 3,
     interval_delay=test_params.sink)
 
-  run_sim( th, cmdline_opts, duts=['pipeline'] )
+  run_sim( th, cmdline_opts, duts=['reginc'] )

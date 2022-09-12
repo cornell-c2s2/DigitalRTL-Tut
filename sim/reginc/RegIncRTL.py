@@ -4,7 +4,6 @@ from pymtl3 import *
 from pymtl3.stdlib import stream
 from pymtl3.passes.backends.verilog import *
 
-from RegIncMsg import *
 
 class RegIncRTL( VerilogPlaceholder, Component ):
 
