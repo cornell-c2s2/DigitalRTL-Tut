@@ -5,14 +5,14 @@
 
 
 module RegIncVRTL(
-input         logic clk,
-input  [31:0] logic in,
+input  logic        clk,
+input  logic        reset,
+input  logic [31:0] a,
 
-output [31:0] logic out
+output       [31:0] b
 );
 
-//Place Implementation here
 
-endmodule;
+endmodule
 
 `endif

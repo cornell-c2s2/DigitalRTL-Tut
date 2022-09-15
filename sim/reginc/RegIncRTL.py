@@ -5,18 +5,18 @@ from pymtl3.stdlib import stream
 from pymtl3.passes.backends.verilog import *
 
 
-class RegIncRTL( VerilogPlaceholder, Component ):
+class RegIncVRTL( VerilogPlaceholder, Component ):
 
   # Constructor
 
   def construct( s ):
     # If translated into Verilog, we use the explicit name
 
-    s.set_metadata( VerilogTranslationPass.explicit_module_name, 'RegIncRTL' )
+    s.set_metadata( VerilogTranslationPass.explicit_module_name, 'RegInc' )
 
     # Interface
-    s.recv = stream.ifcs.RecvIfcRTL( Bits32 )
-    s.send = stream.ifcs.SendIfcRTL( Bits32 )
+    s.a = InPort(32)
+    s.b = OutPort(32)
 
 
-RegInc = RegIncRTL
+RegInc = RegIncVRTL
