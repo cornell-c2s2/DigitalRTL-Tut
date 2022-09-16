@@ -5,12 +5,15 @@
 
 
 module RegIncVRTL(
-input  logic        clk,
-input  logic        reset,
-input  logic [31:0] a,
-
-output       [31:0] b
+    input  logic        clk,
+    input  logic        reset,
+    input  logic [31:0] a,
+    output logic [31:0] b
 );
+
+/////////////////////////////////
+// IMPLEMENT YOUR DESIGN HERE
+/////////////////////////////////
 
 
 endmodule
